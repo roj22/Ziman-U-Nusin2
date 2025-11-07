@@ -45,8 +45,7 @@ const Translator: React.FC<TranslatorProps> = ({ onBack }) => {
   const scriptProcessorRef = useRef<ScriptProcessorNode | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const mp3EncoderRef = useRef<any>(null);
-  const mp3DataRef = useRef<Int8Array[]>([]);
-
+  const mp3DataRef = useRef<any>([]);
   const handleStopRecording = useCallback(async () => {
     if (!scriptProcessorRef.current) return;
 
