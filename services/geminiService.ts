@@ -1,9 +1,7 @@
 // Fix: Import Modality for use in image generation functions.
-import { GoogleGenAI, Modality } from "@google/genai";
-
+import { GoogleGenerativeAI, Modality } from "@google/generative-ai";
 const getAiClient = () => {
-    return new GoogleGenAI({ apiKey: process.env.API_KEY });
-};
+  return new GoogleGenerativeAI({ apiKey: process.env.API_KEY }});};
 
 
 const fileToGenerativePart = (base64: string, mimeType: string) => {
