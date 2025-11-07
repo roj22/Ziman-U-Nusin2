@@ -50,7 +50,7 @@ const SpeechToText: React.FC<SpeechToTextProps> = ({ onBack }) => {
             mp3DataRef.current.push(mp3buf);
         }
 
-        const audioBlob = new Blob(mp3DataRef.current, { type: 'audio/mpeg' });
+        const audioBlob = new Blob(mp3DataRef.current as BlobPart[].current, { type: 'audio/mpeg' });
         const audioUrl = URL.createObjectURL(audioBlob);
         setRecordedAudio({ url: audioUrl, blob: audioBlob });
         
