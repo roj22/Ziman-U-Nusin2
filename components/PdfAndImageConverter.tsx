@@ -165,7 +165,8 @@ const PdfAndImageConverter: React.FC<PdfAndImageConverterProps> = ({ onBack }) =
       }],
     });
   
-    Packer.toBlob(doc).then(blob => {
+// @ts-ignore
+        Packer.toBlob(doc).then(blob => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
