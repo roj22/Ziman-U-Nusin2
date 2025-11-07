@@ -25,7 +25,7 @@ const SpeechToText: React.FC<SpeechToTextProps> = ({ onBack }) => {
   const streamRef = useRef<MediaStream | null>(null);
   const mp3EncoderRef = useRef<any>(null);
   const mp3DataRef = useRef<Int8Array[]>([]);
-
+  const mp3DataRef = useRef<any>([]);
   const handleStopRecording = useCallback(() => {
     if (!scriptProcessorRef.current) return; // Already stopped or not started
 
