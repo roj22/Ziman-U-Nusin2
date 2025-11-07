@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Document, Packer, Paragraph, TextRun } from 'docx';
+// import { Document, Packer, Paragraph, TextRun } from 'docx';
 import ToolContainer from './ToolContainer';
 import { extractTextFromImage, extractTextFromPdfPages } from '../services/geminiService';
 import { fileToBase64 } from '../utils/fileUtils';
