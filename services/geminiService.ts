@@ -52,6 +52,8 @@ export const transcribeForTranslation = async (audioBase64: string, mimeType: st
     promptText = 'The following audio could be in any language. Please detect the language and transcribe it accurately.';
   } else if (languageHint === 'Kurdish (Sorani)') {
     promptText = `The audio is in Kurdish (Sorani). Transcribe it precisely into text using the Kurdish-Arabic alphabet. ${kurdishOrthographyRule}`;
+  } else if (languageHint === 'Kurdish (Kurmanji)') {
+    promptText = 'The audio is in Kurdish (Kurmanji). Transcribe it precisely into text using the Latin alphabet (Hawar script).';
   } else {
     promptText = `The audio is in ${languageHint}. Transcribe it precisely.`;
   }
@@ -301,9 +303,16 @@ export const translateText = async (text: string, sourceLang: string, targetLang
   const ai = getAiClient();
   const model = 'gemini-2.5-pro';
   
+  let rules = '';
+  if (targetLang === 'Kurdish (Sorani)') {
+    rules = `If the target language is Kurdish (Sorani), apply this rule: ${kurdishOrthographyRule}.`;
+  } else if (targetLang === 'Kurdish (Kurmanji)') {
+    rules = 'If the target language is Kurdish (Kurmanji), the translation MUST be in the Latin alphabet (Hawar script).';
+  }
+
   const prompt = sourceLang === 'Auto Detect'
-    ? `Detect the language of the following text and translate it to ${targetLang}. If the target language is Kurdish (Sorani), apply this rule: ${kurdishOrthographyRule}. Only return the translated text, without any additional explanation or the detected language name.\n\nTEXT:\n${text}`
-    : `Translate the following text from ${sourceLang} to ${targetLang}. If the target language is Kurdish (Sorani), apply this rule: ${kurdishOrthographyRule}. Only return the translated text, without any additional explanation.\n\nTEXT:\n${text}`;
+    ? `Detect the language of the following text and translate it to ${targetLang}. ${rules} Only return the translated text, without any additional explanation or the detected language name.\n\nTEXT:\n${text}`
+    : `Translate the following text from ${sourceLang} to ${targetLang}. ${rules} Only return the translated text, without any additional explanation.\n\nTEXT:\n${text}`;
 
   const response = await ai.models.generateContent({
       model,

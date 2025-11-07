@@ -14,11 +14,19 @@ interface TranslatorProps {
 const languages = [
   { code: 'Auto Detect', name: 'خۆکارانە دیاریبکە' },
   { code: 'Kurdish (Sorani)', name: 'کوردی (سۆرانی)' },
+  { code: 'Kurdish (Kurmanji)', name: 'کوردی (کرمانجی)' },
   { code: 'English', name: 'ئینگلیزی' },
   { code: 'Arabic', name: 'عەرەبی' },
   { code: 'Persian', name: 'فارسی' },
   { code: 'Turkish', name: 'تورکی' },
   { code: 'German', name: 'ئەڵمانی' },
+  { code: 'French', name: 'فەرەنسی' },
+  { code: 'Italian', name: 'ئیتالی' },
+  { code: 'Swedish', name: 'سویدی' },
+  { code: 'Norwegian', name: 'نەرویجی' },
+  { code: 'Danish', name: 'دانیمارکی' },
+  { code: 'Finnish', name: 'فینلەندی' },
+  { code: 'Icelandic', name: 'ئایسلەندی' },
 ];
 
 const Translator: React.FC<TranslatorProps> = ({ onBack }) => {
@@ -252,9 +260,9 @@ const Translator: React.FC<TranslatorProps> = ({ onBack }) => {
                 {translatedText && (
                     <button onClick={handleCopy} className="absolute bottom-2 right-2 p-1.5 bg-gray-700 hover:bg-gray-600 rounded-lg" aria-label="Copy text">
                       {copied ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-400" fill="none" viewBox="0 0 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                       ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                       )}
                     </button>
                 )}
