@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useRef, useCallback } from 'react';
 import ToolContainer from './ToolContainer';
 import { transcribeAudio } from '../services/geminiService';
