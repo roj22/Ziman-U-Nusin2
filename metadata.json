@@ -1,0 +1,7 @@
+{
+  "name": "ziman u nusin2",
+  "description": "A comprehensive web application offering a suite of AI-powered linguistic and media tools, including speech-to-text, text correction, summarization, and advanced image manipulation features like background removal and expansion.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

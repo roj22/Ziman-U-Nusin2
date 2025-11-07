@@ -1,0 +1,11 @@
+{
+  "name": "zaman-wenuusin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist && tsc && cp public/* dist/"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
