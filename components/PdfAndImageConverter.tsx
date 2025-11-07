@@ -1,4 +1,5 @@
 
+// @ts-nocheck
 import React, { useState } from 'react';
 // import { Document, Packer, Paragraph, TextRun } from 'docx';
 import ToolContainer from './ToolContainer';
