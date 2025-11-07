@@ -1,19 +1,22 @@
 {
   "name": "ziman-u-nusin2",
   "version": "1.0.0",
-  "private": true,
+  "description": "Ziman u Nusin 2 - Kurdish language learning app",
   "scripts": {
-    "build": "rm -rf dist && tsc && cp public/* dist/"
+    "dev": "vite",
+    "build": "rm -rf dist && tsc && cp public/* dist/",
+    "start": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@google/generative-ai": "^0.7.0"
+    "docx": "^9.0.0",
+    "@google/genai": "^1.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.4.5",
-    "@types/node": "^20.10.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0"
+    "typescript": "^5.3.3",
+    "vite": "^5.0.0",
+    "@types/react": "^18.2.24",
+    "@types/react-dom": "^18.2.8"
   }
 }
