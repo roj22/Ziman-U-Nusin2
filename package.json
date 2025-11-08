@@ -4,7 +4,7 @@
   "description": "Ziman u Nusin 2 - Kurdish language learning app",
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf dist && tsc && cp public/* dist/",
+    "build": "vite build",
     "start": "vite preview"
   },
   "dependencies": {
